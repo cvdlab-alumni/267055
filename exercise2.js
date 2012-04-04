@@ -1,8 +1,7 @@
 var extremeSxWall = (SIMPLEX_GRID([([6,8,6.5]),[0.5,0,0],[3,0,0]]));
 
-//Cercare di snellire
-var upWall = (SIMPLEX_GRID([
-  ([0,5,3]),[8,0,0],[3,0,0]
+var sxRoof = T([1])([8])(SIMPLEX_GRID([
+  ([2,1.5,1.5]),[0.5,0,0],[3,0,0]
 ]));
 
-var baseStruct = STRUCT([extremeSxWall,upWall]);
+var baseStruct = STRUCT([extremeSxWall,sxRoof]);
