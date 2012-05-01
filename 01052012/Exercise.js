@@ -41,9 +41,3 @@ var hermiteCubicalCurve = CUBIC_HERMITE(S0)(controlPoints);
 var curve = MAP(hermiteCubicalCurve)(domain);
 DRAW(curve);
 
-//ESERCIZIO 4 
-var bezierDomain = INTERVALS(1)(30);
-var bezierControlPoints = [[0,0],[3,1],[1,2],[2,3],[3,2]];
-var mapBezier = BEZIER(S0)(bezierControlPoints);
-var bezierCurve = MAP(mapBezier)(bezierDomain);
-DRAW(bezierCurve);
