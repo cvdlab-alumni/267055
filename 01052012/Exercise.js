@@ -37,3 +37,12 @@ var heightRoof = T([2])([2])(roof);
 var coloredRoof = COLOR([0,1,0,0.5])(heightRoof);
 
 DRAW(coloredRoof);
+
+
+//ESERCIZIO 3
+
+var domain = INTERVALS(1)(30);
+var controlPoints = [[1,0],[1,1],[1,0],[1,1]];
+var hermiteCubicalCurve = CUBIC_HERMITE(S0)(controlPoints);
+var curve = MAP(hermiteCubicalCurve)(domain);
+DRAW(curve);
