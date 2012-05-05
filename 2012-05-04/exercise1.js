@@ -1,6 +1,5 @@
 var domain = DOMAIN([[0,1],[0,1]])([30,50]);
 
-//funzione che mi consente di translare i controlPoint lungo l'asse z
 var traslaPoints = function (point, zTranslation)  {
   return point.map(function (p){
 		return [p[0], p[1], p[2] + zTranslation];
