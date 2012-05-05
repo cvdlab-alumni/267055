@@ -12,7 +12,7 @@ var scala = function (point, zTranslation)  {
 	});
 }
 var p0 = [[2,1,0],[0,1,0],[0,-0.5,0], [2,0,0], [2,1,0]];
-var p1 = scala(traslaPoints(p0,2), 0.8);
+var p1 = scala(traslaPoints(p0,1), 0.8);
 var p2 = scala(traslaPoints(p0,2), 0.5);
 
 var c0 = BEZIER(S0)(p0);
