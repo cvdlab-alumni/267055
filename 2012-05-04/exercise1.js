@@ -6,9 +6,14 @@ var traslaPoints = function (point, zTranslation)  {
 	});
 }
 
-var p0 = [[8,5,0],[0,5,0],[0,-1,0], [5,3,0], [8,5,0]];
-var p1 = traslaPoints(p0,5);
-var p2 = traslaPoints(p0,10);
+var scala = function (point, zTranslation)  {
+  return point.map(function (p){
+		return [p[0]*zTranslation, p[1]*zTranslation, p[2]];
+	});
+}
+var p0 = [[2,1,0],[0,1,0],[0,-0.5,0], [2,0,0], [2,1,0]];
+var p1 = scala(traslaPoints(p0,2), 0.8);
+var p2 = scala(traslaPoints(p0,2), 0.5);
 
 var c0 = BEZIER(S0)(p0);
 var c1 = BEZIER(S0)(p1);
