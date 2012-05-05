@@ -6,9 +6,9 @@ var traslaPoints = function (point, zTranslation)  {
 	});
 }
 
-var scala = function (point, zTranslation)  {
+var scala = function (point, factor)  {
   return point.map(function (p){
-		return [p[0]*zTranslation, p[1]*zTranslation, p[2]];
+		return [p[0]*factor, p[1]*factor, p[2]];
 	});
 }
 var p0 = [[2,1,0],[0,1,0],[0,-0.5,0], [2,0,0], [2,1,0]];
