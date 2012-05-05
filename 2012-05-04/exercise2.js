@@ -26,13 +26,10 @@ var curve2 = MAP(c2)(interval);
 var s1 = BEZIER(S1)([c1,c2]);
 var sur1 = MAP(s1)(domain);
 
-var domain1 = INTERVALS(1)(15);
-var domain2 = DOMAIN([[0,1],[0,1]])([15,30]);
-
-var controls1 = [[0,0,0],[1,0,0.8],[3.5,0,0.8],[4.5,0,0.8],[6.5,0,0]];
+var controls1 = [[0,0,0],[1,0,0.5],[3.5,0,0.8],[4.5,0,0.5],[6.5,0,0]];
 var knots1 = [0,0,0,1,2,3,3,3];
 var c3 = NUBS(S0)(2)(knots1)(controls1);
-var curve3 = MAP(c3)(domain1);
+var curve3 = MAP(c3)(interval);
 
 var s13 = BEZIER(S1)([c1,c3]); 
 var surface13 = MAP(s13)(domain);
