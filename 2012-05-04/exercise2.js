@@ -39,7 +39,7 @@ var surface23 = MAP(s23)(domain);
 var upSurface = STRUCT([surface13,surface23]);
 
 var c4 = NUBS(S0)(2)(knots1)(ribaltaz(controls1));
-var curve4 = MAP(c4)(domain1);
+var curve4 = MAP(c4)(domain);
 
 var s14 = BEZIER(S1)([c1,c4]); 
 var surface14 = MAP(s14)(domain);
