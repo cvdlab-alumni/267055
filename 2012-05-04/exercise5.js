@@ -18,4 +18,8 @@ var hgrass2 = T([0,1])([-60,90])(CUBOID([50, 10, 0.2]));
 var hgrass3 = T([0,1])([-60,150])(CUBOID([160, 10, 0.2]));
 var grass = COLOR([0/255, 100/255, 0/255])(STRUCT([vgrass1,vgrass2,hgrass1,hgrass2,hgrass3]));
 var streetWithLineAndGrass = STRUCT([streetWithLine,grass]);
+<<<<<<< HEAD
 DRAW(streetWithLineAndGrass);
+=======
+DRAW(streetWithLineAndGrass);
+>>>>>>> f3f0a9e622c3a8397c161ad30d8d4c4da39f0d96
