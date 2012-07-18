@@ -146,7 +146,7 @@ var topSurfaceR = STRUCT([graySurMapped1R,graySurMapped2R]);
 var topWithGrayMatterSurface = STRUCT([topSurface,topSurfaceR]);
 DRAW(topWithGrayMatterSurface);
 
-//NERVE FIBER TRACTS
+//NERVE FIBER TRACTS - with affine trasformation
 var nerveControlPoints = [[-0.15,1.85,1.757],[-0.1,1.82,1.757],[-0.15,1.8,1.757]];
 var nerveControlPoints2 = [[-0.15,1.8,1.757],[-0.2,1.82,1.757],[-0.15,1.85,1.757]];
 var nerveHeight = [0,0,0.5];
@@ -155,70 +155,19 @@ var halfNerveFiber1 = createCylSurface(nerveControlPoints, nerveHeight, domain);
 var halfNerveFiber2 = createCylSurface(nerveControlPoints2, nerveHeight, domain);
 
 var nerveFiber = COLOR(grayMatterColor)(STRUCT([halfNerveFiber1,halfNerveFiber2]));
-DRAW(nerveFiber);
 
-var nerveControlPointsMoved1 = muovi(nerveControlPoints,true, true,-0.1);
-var nerveControlPointsMoved2 = muovi(nerveControlPoints2,true, true,-0.1);
+var nerveFiber1 = T([0,1])([-0.1,-0.2])(nerveFiber);
+var nerveFiber2 = T([1])([-0.2])(nerveFiber);
 
-var halfNerveFiber1Moved = createCylSurface(nerveControlPointsMoved1, nerveHeight, domain);
-var halfNerveFiber2Moved = createCylSurface(nerveControlPointsMoved2, nerveHeight, domain);
+var nerveFiber3 = T([0,1])([-0.1,-0.1])(nerveFiber);
+var nerveFiber4 = T([1])([-0.1])(nerveFiber);
 
-var nerveFiberMoved1 = COLOR(grayMatterColor)(STRUCT([halfNerveFiber1Moved,halfNerveFiber2Moved]));
-DRAW(nerveFiberMoved1);
+var nerveFiber5 = T([0])([0.1])(nerveFiber);
+var nerveFiber6 = T([0,1])([0.1, -0.1])(nerveFiber);
+var nerveFiber7 = T([0,1])([0.1, -0.2])(nerveFiber);
 
-var nerveControlPointsMoved3 = muovi(nerveControlPointsMoved1,false,true,-0.08);
-var nerveControlPointsMoved4 = muovi(nerveControlPointsMoved2,false,true,-0.08);
-
-var halfNerveFiber3Moved = createCylSurface(nerveControlPointsMoved3, nerveHeight, domain);
-var halfNerveFiber4Moved = createCylSurface(nerveControlPointsMoved4, nerveHeight, domain);
-
-var nerveFiberMoved2 = COLOR(grayMatterColor)(STRUCT([halfNerveFiber3Moved,halfNerveFiber4Moved]));
-DRAW(nerveFiberMoved2);
-
-var nerveControlPointsMoved5 = muovi(nerveControlPoints,false,true,-0.1);
-var nerveControlPointsMoved6 = muovi(nerveControlPoints2,false,true,-0.1);
-
-var halfNerveFiber5Moved = createCylSurface(nerveControlPointsMoved5, nerveHeight, domain);
-var halfNerveFiber6Moved = createCylSurface(nerveControlPointsMoved6, nerveHeight, domain);
-
-var nerveFiberMoved3 = COLOR(grayMatterColor)(STRUCT([halfNerveFiber5Moved,halfNerveFiber6Moved]));
-DRAW(nerveFiberMoved3);
-
-var nerveControlPointsMoved7 = muovi(nerveControlPoints,false,true,-0.2);
-var nerveControlPointsMoved8 = muovi(nerveControlPoints2,false,true,-0.2);
-
-var halfNerveFiber7Moved = createCylSurface(nerveControlPointsMoved7, nerveHeight, domain);
-var halfNerveFiber8Moved = createCylSurface(nerveControlPointsMoved8, nerveHeight, domain);
-
-var nerveFiberMoved4 = COLOR(grayMatterColor)(STRUCT([halfNerveFiber7Moved,halfNerveFiber8Moved]));
-DRAW(nerveFiberMoved4);
-
-var nerveControlPointsMoved9 = muovi(nerveControlPoints,true,false,0.08);
-var nerveControlPointsMoved10 = muovi(nerveControlPoints2,true,false,0.08);
-
-var halfNerveFiber9Moved = createCylSurface(nerveControlPointsMoved9, nerveHeight, domain);
-var halfNerveFiber10Moved = createCylSurface(nerveControlPointsMoved10, nerveHeight, domain);
-
-var nerveFiberMoved5 = COLOR(grayMatterColor)(STRUCT([halfNerveFiber9Moved,halfNerveFiber10Moved]));
-DRAW(nerveFiberMoved5);
-
-var nerveControlPointsMoved11 = muovi(nerveControlPointsMoved9,false,true,-0.1);
-var nerveControlPointsMoved12 = muovi(nerveControlPointsMoved10,false,true,-0.1);
-
-var halfNerveFiber11Moved = createCylSurface(nerveControlPointsMoved11, nerveHeight, domain);
-var halfNerveFiber12Moved = createCylSurface(nerveControlPointsMoved12, nerveHeight, domain);
-
-var nerveFiberMoved6 = COLOR(grayMatterColor)(STRUCT([halfNerveFiber11Moved,halfNerveFiber12Moved]));
-DRAW(nerveFiberMoved6);
-
-var nerveControlPointsMoved13 = muovi(nerveControlPointsMoved11,false,true,-0.1);
-var nerveControlPointsMoved14 = muovi(nerveControlPointsMoved12,false,true,-0.1);
-
-var halfNerveFiber13Moved = createCylSurface(nerveControlPointsMoved13, nerveHeight, domain);
-var halfNerveFiber14Moved = createCylSurface(nerveControlPointsMoved14, nerveHeight, domain);
-
-var nerveFiberMoved7 = COLOR(grayMatterColor)(STRUCT([halfNerveFiber13Moved,halfNerveFiber14Moved]));
-DRAW(nerveFiberMoved7);
+var nerveFiberTracts = (STRUCT([nerveFiber, nerveFiber1, nerveFiber2, nerveFiber3,nerveFiber4, nerveFiber5, nerveFiber6, nerveFiber7]));
+DRAW(nerveFiberTracts);
 
 //NERVI GROSSI
 var spinalNervePoints = [[2,1.4,0.8],[2,1.6,0.9],[2,1.4,1]];
@@ -312,5 +261,3 @@ var fiberFrontR = STRUCT([fiberFront4, fiberFront5, fiberFront6]);
 
 var fiberR = STRUCT([baseNerveR, fiberFrontR, fiberBackR]);
 DRAW(fiberR);
-
-
