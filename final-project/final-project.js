@@ -26,7 +26,7 @@ var createCylSurface = function (controlPoints, height, domain){
   return MAP(CYLINDRICAL_SURFACE(curve)(height))(domain);
 }
 
-var createAndDrawConicalSurface = function(apex, baseCurve, color){
+var createConicalSurface = function(apex, baseCurve, color){
       var curve = CONICAL_SURFACE(apex)(baseCurve);
         var curveMapped = MAP(curve)(domain);
         return curveColored = COLOR(color)(curveMapped);
@@ -248,9 +248,9 @@ var topNervePointsBottom1 = [0.73,1.767,1.778];
 var topNervePointsBottom2 = [0.72,1.78,1.18];
 var topNervePointsBottom3 = [0.72,1.78,1.5];
 
-var fiberBack1 = createAndDrawConicalSurface(topNervePointsBottom1, curveBaseNerveBack, grayMatterColor);
-var fiberBack2 = createAndDrawConicalSurface(topNervePointsBottom2, curveBaseNerveBack, grayMatterColor);
-var fiberBack3 = createAndDrawConicalSurface(topNervePointsBottom3, curveBaseNerveBack, grayMatterColor);
+var fiberBack1 = createConicalSurface(topNervePointsBottom1, curveBaseNerveBack, grayMatterColor);
+var fiberBack2 = createConicalSurface(topNervePointsBottom2, curveBaseNerveBack, grayMatterColor);
+var fiberBack3 = createConicalSurface(topNervePointsBottom3, curveBaseNerveBack, grayMatterColor);
 
 var fiberBack = STRUCT([fiberBack1, fiberBack2, fiberBack3]);
 
@@ -258,9 +258,9 @@ var topNervePointsFront1 = [0.56,0.268,1.18];
 var topNervePointsFront2 = [0.56,0.268,1.768];
 var topNervePointsFront3 = [0.56,0.268,1.5];
 
-var fiberFront1 = createAndDrawConicalSurface(topNervePointsFront1, curveBaseNerveFront, grayMatterColor);
-var fiberFront2 = createAndDrawConicalSurface(topNervePointsFront2, curveBaseNerveFront, grayMatterColor);
-var fiberFront3 = createAndDrawConicalSurface(topNervePointsFront3, curveBaseNerveFront, grayMatterColor);
+var fiberFront1 = createConicalSurface(topNervePointsFront1, curveBaseNerveFront, grayMatterColor);
+var fiberFront2 = createConicalSurface(topNervePointsFront2, curveBaseNerveFront, grayMatterColor);
+var fiberFront3 = createConicalSurface(topNervePointsFront3, curveBaseNerveFront, grayMatterColor);
 
 var fiberFront = STRUCT([fiberFront1, fiberFront2, fiberFront3]);
 
@@ -294,9 +294,9 @@ var topNervePointsBottom4 = [-0.73,1.767,1.778];
 var topNervePointsBottom5 = [-0.72,1.78,1.18];
 var topNervePointsBottom6 = [-0.72,1.78,1.5];
 
-var fiberBack4 = createAndDrawConicalSurface(topNervePointsBottom4, curveBaseNerveBackR, grayMatterColor);
-var fiberBack5 = createAndDrawConicalSurface(topNervePointsBottom5, curveBaseNerveBackR, grayMatterColor);
-var fiberBack6 = createAndDrawConicalSurface(topNervePointsBottom6, curveBaseNerveBackR, grayMatterColor);
+var fiberBack4 = createConicalSurface(topNervePointsBottom4, curveBaseNerveBackR, grayMatterColor);
+var fiberBack5 = createConicalSurface(topNervePointsBottom5, curveBaseNerveBackR, grayMatterColor);
+var fiberBack6 = createConicalSurface(topNervePointsBottom6, curveBaseNerveBackR, grayMatterColor);
 
 var fiberBackR = STRUCT([fiberBack4, fiberBack5, fiberBack6]);
 
@@ -304,9 +304,9 @@ var topNervePointsFront4 = [-0.56,0.268,1.18];
 var topNervePointsFront5 = [-0.56,0.268,1.768];
 var topNervePointsFront6 = [-0.56,0.268,1.5];
 
-var fiberFront4 = createAndDrawConicalSurface(topNervePointsFront4, curveBaseNerveFrontR, grayMatterColor);
-var fiberFront5 = createAndDrawConicalSurface(topNervePointsFront5, curveBaseNerveFrontR, grayMatterColor);
-var fiberFront6 = createAndDrawConicalSurface(topNervePointsFront6, curveBaseNerveFrontR, grayMatterColor);
+var fiberFront4 = createConicalSurface(topNervePointsFront4, curveBaseNerveFrontR, grayMatterColor);
+var fiberFront5 = createConicalSurface(topNervePointsFront5, curveBaseNerveFrontR, grayMatterColor);
+var fiberFront6 = createConicalSurface(topNervePointsFront6, curveBaseNerveFrontR, grayMatterColor);
 
 var fiberFrontR = STRUCT([fiberFront4, fiberFront5, fiberFront6]);
 
